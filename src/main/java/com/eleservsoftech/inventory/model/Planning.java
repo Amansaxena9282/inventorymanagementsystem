@@ -5,16 +5,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.security.Timestamp;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+//@EnableJpaRepositories
+@Entity
 //@DynamicInsert
 //@DynamicUpdate
 
@@ -44,5 +45,8 @@ public class Planning {
     private String lower_aligner_to;
     private Timestamp created_At;
 
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "fk_planning_id")
+    private Planning planning;
 
 }

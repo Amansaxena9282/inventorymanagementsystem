@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -14,13 +17,16 @@ import java.security.Timestamp;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+//@EnableJpaRepositories
+//@Configuration
+//@EnableTransactionManagement
+@Entity
 //@DynamicInsert
 //@DynamicUpdate
 
 public class Stagging {
     @Id
-    private int planning_id;
+    private Long planning_id;
     private String staging;
     private String crm;
     private String planning_type;

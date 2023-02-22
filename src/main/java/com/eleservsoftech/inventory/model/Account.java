@@ -5,13 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.security.Timestamp;
 
-
+//@EnableJpaRepositories
+//
 //@Entity
 //@DynamicInsert
 //@DynamicUpdate

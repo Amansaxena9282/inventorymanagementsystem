@@ -2,12 +2,14 @@ package com.eleservsoftech.inventory.service;
 import com.eleservsoftech.inventory.model.Vendor;
 import com.eleservsoftech.inventory.repository.VendorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class VendorServiceImpl implements VendorService{
-    @Autowired
+//   @Autowired
+    @Qualifier("vendorRepository")
     private VendorRepository vendorRepository;
     @Override
     public List<Vendor> getAll() {

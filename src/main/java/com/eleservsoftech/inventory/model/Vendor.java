@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -15,6 +16,8 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Entity
 @DynamicInsert
+@EnableJpaRepositories
+
 @DynamicUpdate
 @Table(name="vendor")
 public class Vendor {

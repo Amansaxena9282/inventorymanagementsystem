@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public interface VendorService {
-//    @Autowired
-//    public VendorRepository vendorRepository=null;
+    @Autowired
+    public VendorRepository vendorRepository=null;
     public List<Vendor>getAll();
     public Vendor getById(Long id);
     public Vendor addVendor (Vendor vendor);

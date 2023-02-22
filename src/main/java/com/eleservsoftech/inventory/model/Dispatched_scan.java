@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import java.sql.Timestamp;
 
 @Data
 @NoArgsConstructor
+//@EnableJpaRepositories
+
 @AllArgsConstructor
 //@Entity
 //@DynamicInsert
@@ -52,5 +55,6 @@ public class Dispatched_scan {
     private String upper_att;
     private String lower_att;
     private Timestamp created_At;
+
 
 }

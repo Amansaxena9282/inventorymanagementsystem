@@ -1,17 +1,30 @@
 package com.eleservsoftech.inventory.service;
 import com.eleservsoftech.inventory.model.*;
 import com.eleservsoftech.inventory.model1.Account;
+import com.eleservsoftech.inventory.model1.Cc_crm;
 import com.eleservsoftech.inventory.model1.Planning;
 import com.eleservsoftech.inventory.model1.Stagging;
 import com.eleservsoftech.inventory.repository.DescriptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import java.util.*;
 @Service
-public class DescriptionServiceImpl  implements DescriptionService{
+public class DescriptionServiceImpl implements DescriptionService{
     @Autowired
     private DescriptionRepository descriptionRepository;
-    @Override
+   // @Override
+//    public  getAll(){
+//        List<Description> description = null;
+//        description =   descriptionRepository.findAll();
+//        description.stream().forEach(i->{
+//            Map<String,Object> map = new LinkedHashMap<>();
+//            map.put("id",i.getDescription_id());
+//            map.put("name",i.getName());
+//        });
+//    }
     public List<Description> getAll() {
         return descriptionRepository.findAll();
     }
@@ -44,24 +57,27 @@ public class DescriptionServiceImpl  implements DescriptionService{
     }
 
     @Override
-    public List<Dispatched_scan> getCaseDetailsforDispatch(String id, String details) {
+    public List<com.eleservsoftech.inventory.model1.Dispatched_scan> getCaseDetailsforDispatch(String id, String details) {
         return descriptionRepository.getCaseDetailsforDispatch(id, details);
     }
-
     @Override
     public List<Account> getCaseDetailsforAcount(String id, String details) {
         return descriptionRepository.getCaseDetailsforAcount(id, details);
     }
-
     @Override
     public List<Planning> getCaseDetailsforPlanning(String id, String details) {
         return descriptionRepository.getCaseDetailsforPlanning(id, details);
     }
-
     @Override
     public List<Stagging> getCaseDetailsforStagging(String id, String details) {
-        return descriptionRepository.getCaseDetailsforStagging(id, details);
+        return descriptionRepository.getCaseDetailsforStagging(id,details);
     }
-
-
+//    @Override
+//    public List<Dispatched_scan> getCaseDetailsforDispatched_scan(String id, String details) {
+//        return descriptionRepository.getCaseDetailsforDispatched_scan(id, details);
+//    }
+    @Override
+    public List<Cc_crm> getCaseDetailsforCc_crm(String id, String details) {
+        return descriptionRepository.getCaseDetailsforCc_crm(id,details);
+    }
 }
