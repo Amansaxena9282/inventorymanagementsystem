@@ -22,11 +22,13 @@ public class DescriptionController {
     }
 
     @GetMapping("/get/{id}")
+
     public Description getdescription_id(@PathVariable Long id) {
         Description description=descriptionService.getById(id);
         return description;
     }
     @PostMapping("/savedata")
+
     public Description addDescription(@RequestBody Description description){
         descriptionService.addDescription(description);
         return description;
